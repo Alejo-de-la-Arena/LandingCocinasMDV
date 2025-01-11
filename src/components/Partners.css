@@ -1,0 +1,64 @@
+.partners {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.logos-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.logos-track {
+    display: flex;
+    gap: 40px;
+    animation: scrollLogos 20s linear infinite;
+    align-items: center;
+}
+
+.partner-logo {
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: brightness(1.2);
+    transform: scale(1.2);
+}
+
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 768px) {
+    .partner-logo {
+        height: 80px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .partner-logo {
+        height: 100px;
+    }
+
+    .partners-title {
+        font-size: 2.5rem;
+    }
+}
