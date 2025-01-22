@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion"; // Librería para animaciones
+import { motion } from "framer-motion"; 
 import CocinaHeroImg1 from "../assets/Images/Cocina-MDV.jpg";
 import CocinaHeroImg2 from "../assets/Images/Cocina-MDV.jpg";
 import CocinaHeroImg3 from "../assets/Images/Cocina-MDV.jpg";
@@ -19,14 +19,13 @@ const Hero = () => {
     return (
         <section className="relative bg-white overflow-hidden mt-24 sm:mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between min-h-[80vh] lg:min-h-screen">
-                {/* Texto del Hero */}
                 <motion.div
                     className="text-center lg:text-left max-w-lg lg:max-w-2xl space-y-5 mt-8 lg:mt-0"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight text-gray-900">
+                    <h1 className="text-3xl sm:text-4xl  lg:text-[2.5rem] font-bold leading-tight text-gray-900">
                         Stay ahead of the curve <br /> with our forward-thinking
                     </h1>
                     <p className="text-base sm:text-lg text-gray-600">
