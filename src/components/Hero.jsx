@@ -25,8 +25,8 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h1 className="text-3xl sm:text-4xl  lg:text-[2.5rem] font-bold leading-tight text-gray-900">
-                        Stay ahead of the curve <br /> with our forward-thinking
+                    <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight text-gray-900 max-w-xl">
+                        Compra tu cocina y disfruta de nuestros productos
                     </h1>
                     <p className="text-base sm:text-lg text-gray-600">
                         An award-winning SEO agency with disciplines in digital marketing, design, and website development. Focused on understanding you.

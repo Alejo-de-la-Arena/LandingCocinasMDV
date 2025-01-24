@@ -38,12 +38,9 @@ const Partners = () => {
             className="py-16 bg-gray-100 overflow-hidden relative flex flex-col items-center"
         >
             {/* Contenedor de los logos */}
-            <div className="relative w-full overflow-hidden">
-                <div
-                    className="flex items-center justify-center space-x-12 animate-scroll"
-                    style={{ animationDuration: "60s" }}
-                >
-                    {logos.concat(logos).map((logo, index) => (
+            <div className="relative w-full">
+                <div className="flex items-center justify-center space-x-12">
+                    {logos.map((logo, index) => (
                         <motion.img
                             key={index}
                             src={logo}
