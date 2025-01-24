@@ -41,26 +41,36 @@ const Testimonials = () => {
 
     return (
         <section
-            className="testimonials py-16 px-6 lg:px-16 bg-white-100"
+            className="testimonials py-16 px-6 lg:px-16 bg-gradient-to-b from-gray-100 via-white to-gray-50"
             ref={ref}
         >
-            <div className="container mx-auto max-w-4xl relative">
+            <div className="container mx-auto max-w-4xl relative text-center">
+                {/* Title and Subtitle */}
+                <div className={`transition-all duration-1000 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                        Nuestros Testimonios
+                    </h2>
+                    <p className="text-lg text-gray-600 mb-12">
+                        Historias reales de éxito con nuestro servicio
+                    </p>
+                </div>
+
                 {/* Testimonial Text */}
                 <div
                     className={`transition-opacity duration-1000 ${inView ? "opacity-100" : "opacity-0"
                         }`}
                 >
-                    <p className="text-2xl italic text-gray-800 text-center leading-relaxed mb-10">
+                    <p className="text-2xl italic text-gray-800 leading-relaxed mb-10">
                         {testimonials[currentIndex].message}
                     </p>
                 </div>
 
                 {/* Client Info */}
-                <div className="flex items-center justify-start gap-4 mt-8">
+                <div className="flex items-center justify-center gap-4 mt-8">
                     <img
                         src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].name}
-                        className="w-16 h-16 rounded-full"
+                        className="w-16 h-16 rounded-full border-2 border-gray-300"
                     />
                     <div>
                         <h4 className="text-lg font-semibold text-gray-800">
@@ -73,7 +83,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Navigation Controls */}
-                <div className="flex items-center gap-4 justify-end">
+                <div className="flex items-center gap-4 justify-center mt-10">
                     <button
                         className="border border-black text-black py-2 px-4 sm:px-6 rounded-full font-medium text-sm sm:text-base hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300"
                         onClick={prevTestimonial}
@@ -86,7 +96,7 @@ const Testimonials = () => {
                         ).padStart(2, "0")}`}
                     </span>
                     <button
-                        className="border border-black bg-black text-white py-2 px-4 sm:px-6 rounded-full font-medium text-sm sm:text-base hover:bg-gray-700 hover:text-white hover:shadow-lg transition-all duration-300"
+                        className="border border-black bg-black text-white py-2 px-4 sm:px-6 rounded-full font-medium text-sm sm:text-base hover:bg-gray-800 hover:text-white hover:shadow-lg transition-all duration-300"
                         onClick={nextTestimonial}
                     >
                         <FaChevronRight size={24} />

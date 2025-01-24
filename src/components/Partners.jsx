@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-
+import Marquee from "react-marquee-slider";
 import amazonLogo from "../assets/Logos/icons8-amazonas.svg";
 import facebookLogo from "../assets/Logos/icons8-facebook-nuevo.svg";
 import googleLogo from "../assets/Logos/icons8-logo-de-google.svg";
@@ -20,42 +17,29 @@ const logos = [
     nikeLogo,
     teslaLogo,
     youtubeLogo,
+    amazonLogo,
+    facebookLogo,
+    googleLogo,
 ];
 
 const Partners = () => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.2 });
-
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-    }, [controls, inView]);
-
     return (
-        <section
-            ref={ref}
-            className="py-16 bg-gray-100 overflow-hidden relative flex flex-col items-center"
-        >
-            {/* Contenedor de los logos */}
-            <div className="relative w-full">
-                <div className="flex items-center justify-center space-x-12">
+        <section className="py-16 bg-gradient-to-b from-gray-100 to-gray-200">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-800">Nuestros Aliados Estratégicos</h2>
+                <p className="text-gray-600 mt-2">Confían en nosotros marcas líderes a nivel mundial.</p>
+            </div>
+            <div className="w-full overflow-hidden">
+                <Marquee velocity={25} resetAfterTries={100} scatterRandomly={false}>
                     {logos.map((logo, index) => (
-                        <motion.img
+                        <img
                             key={index}
                             src={logo}
                             alt={`Logo ${index + 1}`}
-                            className="h-16 object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{
-                                delay: index * 0.1,
-                                duration: 0.5,
-                                ease: "easeOut",
-                            }}
+                            className="h-16 object-contain mx-6"
                         />
                     ))}
-                </div>
+                </Marquee>
             </div>
         </section>
     );

@@ -7,6 +7,10 @@ const Header = () => {
         window.open(`https://wa.me/${whatsappNumber}`, "_blank");
     };
 
+    const handleNotificationClick = () => {
+        alert("¡Próximamente podrás ver notificaciones de novedades y promociones!");
+    };
+
     return (
         <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -24,7 +28,10 @@ const Header = () => {
                     </button>
 
                     {/* Botón Notificaciones */}
-                    <button className="bg-black text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300">
+                    <button
+                        onClick={handleNotificationClick}
+                        className="bg-black text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300"
+                    >
                         <BsBell className="text-base sm:text-lg" />
                     </button>
                 </div>
